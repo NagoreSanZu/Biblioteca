@@ -19,4 +19,7 @@ public class Conector {
 		Statement st = conexion.createStatement();
 	}
 	
+	public void cerrarConexion(Connection conexion) throws SQLException {
+		conexion.close();
+	}
 }
