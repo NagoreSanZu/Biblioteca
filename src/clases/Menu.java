@@ -32,7 +32,7 @@ public class Menu {
 				menuSocios();
 				break;
 			case OPCION_PRESTAMOS:
-				System.out.println("tercera opcion seleccionada\n");
+				menuPrestamo();
 				break;
 			case SALIR:
 				System.out.println("ADIOS");
@@ -43,6 +43,10 @@ public class Menu {
 
 		} while (opcion_menu != SALIR);
 		scan.close();
+	}
+
+	public void menuPrestamo() {
+		System.out.println("1-Realizar un prestamo");
 	}
 
 	public void menuSocios() {
