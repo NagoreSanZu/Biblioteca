@@ -24,12 +24,12 @@ public class Menu {
 
 			switch (opcion_menu) {
 			case OPCION_GESTIONAR:
-				menuLibros(scan);
+				menuLibros();
 				break;
 				
 			case OPCION_SOCIOS:
 				
-				
+				menuSocios();
 				break;
 			case OPCION_PRESTAMOS:
 				System.out.println("tercera opcion seleccionada\n");
@@ -45,7 +45,11 @@ public class Menu {
 		scan.close();
 	}
 
-	public void menuLibros(Scanner scan) {
+	public void menuSocios() {
+		System.out.println("1-Ver socios");
+	}
+
+	public void menuLibros() {
 		System.out.println("1-Insertar libro");
 		System.out.println("2- Eliminar libro");
 		System.out.println("3- Ver libros");
