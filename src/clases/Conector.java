@@ -10,12 +10,24 @@ public class Conector {
 	private static final String BBDD ="biblioteca";
 	private static final String USERNAME = "root";
 	private static final String PASSWROD = "";
+	Connection conexion;
 	
 	
+	//getter and setters
+	public Connection getConexion() {
+		return conexion;
+	}
+
+	public void setConexion(Connection conexion) {
+		this.conexion = conexion;
+	}
+	
+	//
+
 	public void Conexion() throws ClassNotFoundException, SQLException {
-		Connection conexion;
+		
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		conexion= DriverManager.getConnection("jdbc:mysql://"+HOST+"/"+BBDD, USERNAME, PASSWROD);
+		conexion= DriverManager.getConnection("jdbc:mysql://"+HOST+ "/" +BBDD, USERNAME, PASSWROD);
 		Statement st = conexion.createStatement();
 	}
 	
