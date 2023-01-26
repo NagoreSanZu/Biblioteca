@@ -8,6 +8,9 @@ public class GestorBBDD {
 		
 	}
 	
-	
+	public Libro getLibro(int id) {
+		return null;
+		
+	}
 
 }
