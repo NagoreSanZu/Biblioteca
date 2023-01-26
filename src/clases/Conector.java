@@ -7,7 +7,7 @@ import java.sql.Statement;
 
 public class Conector {
 	private static final String HOST = "localHost";
-	private static final String BBDD ="eh_garden";
+	private static final String BBDD ="biblioteca";
 	private static final String USERNAME = "root";
 	private static final String PASSWROD = "";
 	
@@ -21,5 +21,6 @@ public class Conector {
 	
 	public void cerrarConexion(Connection conexion) throws SQLException {
 		conexion.close();
+		
 	}
 }
