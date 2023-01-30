@@ -10,4 +10,13 @@ public static void mostrarLibros(ArrayList<Libro> libros) {
 		System.out.println(li);
 	}
 }
+
+public static void mostrarLibro(Libro libro) {
+	System.out.println(libro);
 }
+
+
+
+
+
+}//fin de la clase
