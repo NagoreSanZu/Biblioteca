@@ -3,15 +3,19 @@ package clases;
 import java.util.Scanner;
 
 public class Menu {
+	static final int GESTIONAR_LIBROS = 1;
+	static final int GESTIONAR_SOCIOS = 2;
+	static final int GESTIONAR_PRESTAMOS = 3;
+	static final int SALIR = 0;
+
+	static final int INSERTAR_LIBRO=1;
+	static final int ELIMINAR_LIBRO=2;
+	static final int MODIFICAR_LIBRO=3;
 
 
-	
 
 	public void menuPrincipal() {
-		final int GESTIONAR_LIBROS = 1;
-		final int GESTIONAR_SOCIOS = 2;
-		final int GESTIONAR_PRESTAMOS = 3;
-		final int SALIR = 0;
+	
 
 		Scanner scan = new Scanner(System.in);
 		int opcion_menu;
