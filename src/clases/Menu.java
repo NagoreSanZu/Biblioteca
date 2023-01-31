@@ -16,40 +16,9 @@ public class Menu {
 
 	public void menuPrincipal() {
 	
-
-		Scanner scan = new Scanner(System.in);
-		int opcion_menu;
-
-		do {
-			System.out.println("------MENU-------");
-			System.out.println(GESTIONAR_LIBROS + ".Gestionar Libros");
-			System.out.println(GESTIONAR_SOCIOS + ". Gestionar Socios");
-			System.out.println(GESTIONAR_PRESTAMOS + ". Gestionar Prestamos");
-			System.out.println(SALIR + ". Salir");
-			System.out.println("Elije una de las opciones");
-			opcion_menu = Integer.parseInt(scan.nextLine());
-
-			switch (opcion_menu) {
-			case GESTIONAR_LIBROS:
-				menuLibros();
-				break;
-				
-			case GESTIONAR_SOCIOS:
-				
-				menuSocios();
-				break;
-			case GESTIONAR_PRESTAMOS:
-				menuPrestamo();
-				break;
-			case SALIR:
-				System.out.println("ADIOS");
-				break;
-			default:
-				System.out.println("Opcion incorrecta!");
-			}
-
-		} while (opcion_menu != SALIR);
-		scan.close();
+		System.out.println("Gestionar Libros");
+		System.out.println("Gestionar Socios");
+		System.out.println("Gestionar Prestamos");
 	}
 
 	public void menuPrestamo() {
