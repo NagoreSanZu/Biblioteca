@@ -4,10 +4,13 @@ import java.util.Scanner;
 
 public class Menu {
 
+
+	
+
 	public void menuPrincipal() {
-		final int OPCION_GESTIONAR = 1;
-		final int OPCION_SOCIOS = 2;
-		final int OPCION_PRESTAMOS = 3;
+		final int GESTIONAR_LIBROS = 1;
+		final int GESTIONAR_SOCIOS = 2;
+		final int GESTIONAR_PRESTAMOS = 3;
 		final int SALIR = 0;
 
 		Scanner scan = new Scanner(System.in);
@@ -15,23 +18,23 @@ public class Menu {
 
 		do {
 			System.out.println("------MENU-------");
-			System.out.println(OPCION_GESTIONAR + ".Gestionar Libros");
-			System.out.println(OPCION_SOCIOS + ". Gestionar Socios");
-			System.out.println(OPCION_PRESTAMOS + ". Gestionar Prestamos");
+			System.out.println(GESTIONAR_LIBROS + ".Gestionar Libros");
+			System.out.println(GESTIONAR_SOCIOS + ". Gestionar Socios");
+			System.out.println(GESTIONAR_PRESTAMOS + ". Gestionar Prestamos");
 			System.out.println(SALIR + ". Salir");
 			System.out.println("Elije una de las opciones");
 			opcion_menu = Integer.parseInt(scan.nextLine());
 
 			switch (opcion_menu) {
-			case OPCION_GESTIONAR:
+			case GESTIONAR_LIBROS:
 				menuLibros();
 				break;
 				
-			case OPCION_SOCIOS:
+			case GESTIONAR_SOCIOS:
 				
 				menuSocios();
 				break;
-			case OPCION_PRESTAMOS:
+			case GESTIONAR_PRESTAMOS:
 				menuPrestamo();
 				break;
 			case SALIR:
