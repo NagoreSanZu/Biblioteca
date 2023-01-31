@@ -16,7 +16,10 @@ public static void mostrarLibro(Libro libro) {
 }
 
 
-
+public static  String mostradorMensajes(String mensaje) {
+	return mensaje;
+	
+}
 
 
 }//fin de la clase
