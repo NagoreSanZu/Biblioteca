@@ -11,25 +11,27 @@ public class Menu {
 	static final int INSERTAR_LIBRO=1;
 	static final int ELIMINAR_LIBRO=2;
 	static final int MODIFICAR_LIBRO=3;
+	
+	static final int VER_SOCIOS =1;
 
 
 
-	public void menuPrincipal() {
+	public static void menuPrincipal() {
 	
 		System.out.println("Gestionar Libros");
 		System.out.println("Gestionar Socios");
 		System.out.println("Gestionar Prestamos");
 	}
 
-	public void menuPrestamo() {
+	public static void menuPrestamo() {
 		System.out.println("1-Realizar un prestamo");
 	}
 
-	public void menuSocios() {
+	public static void menuSocios() {
 		System.out.println("1-Ver socios");
 	}
 
-	public void menuLibros() {
+	public static void menuLibros() { 
 		System.out.println("1-Insertar libro");
 		System.out.println("2- Eliminar libro");
 		System.out.println("3- Ver libros");
