@@ -16,9 +16,8 @@ public static void mostrarLibro(Libro libro) {
 }
 
 
-public static  String mostradorMensajes(String mensaje) {
-	return mensaje;
-	
+public static void mostradorMensajes(String mensaje) {
+System.out.println(mensaje);	
 }
 
 
