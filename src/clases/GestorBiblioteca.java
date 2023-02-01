@@ -13,11 +13,11 @@ public class GestorBiblioteca {
 			switch(opcionLibro){
 			
 			case Menu.GESTIONAR_LIBROS:
-				System.out.println("ins socio");
+				GestorLibros.run(scan);
 				break;
 			
 			case Menu.GESTIONAR_SOCIOS:
-				System.out.println("ins socio");
+				GestorSocios.run(scan);
 				break;
 			
 			case Menu.GESTIONAR_PRESTAMOS:
