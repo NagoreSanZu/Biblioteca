@@ -24,7 +24,10 @@ public class GestorLibros {
 				break;
 			
 			case Menu.ELIMINAR_LIBRO:
-				
+				gestorBases.Conexion();
+				int idElim=formulario.pedirIdLibros(scan);
+				gestorBases.eliminarLibro(idElim);
+				gestorBases.cerrarConexion();
 				break;
 			
 			case Menu.MODIFICAR_LIBRO:
