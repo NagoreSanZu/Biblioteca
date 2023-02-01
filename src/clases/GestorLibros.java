@@ -1,12 +1,14 @@
 package clases;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class GestorLibros {
 
-	public static void run(Scanner scan) {
+	public static void run(Scanner scan) throws ClassNotFoundException, SQLException, NumberFormatException {
 		int opcionLibro;
-
+		GestorBBDD gestorBases= new GestorBBDD();
+		FormularioDeDatos formulario =new FormularioDeDatos();
 
 		do {
 			Menu.menuLibros();
@@ -15,19 +17,27 @@ public class GestorLibros {
 			switch(opcionLibro){
 			
 			case Menu.INSERTAR_LIBRO:
-				System.out.println("ins socio");
+				gestorBases.Conexion();
+				Libro libroInsert=formulario.pedirDatosLibro(scan);
+				gestorBases.insertarLibro(libroInsert);
+				gestorBases.cerrarConexion();
 				break;
 			
 			case Menu.ELIMINAR_LIBRO:
-				System.out.println("ins socio");
+				
 				break;
 			
 			case Menu.MODIFICAR_LIBRO:
-				System.out.println("ins socio");
-				break;
-			
-			
+				gestorBases.Conexion();
+				//Libro libroMod = formulario.ModificarDatosLibro(libro, scan);
 				
+				gestorBases.cerrarConexion();
+				break;
+			case Menu.SALIR:
+				System.out.println("agur");
+			
+			default:
+				System.out.println("Opcion incorrecta!");
 			}//fin switch
 		}  while(opcionLibro != Menu.SALIR);//fin do
 	}//fin run 
