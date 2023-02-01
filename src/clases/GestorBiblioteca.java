@@ -30,5 +30,5 @@ public class GestorBiblioteca {
 				System.out.println("Opcion incorrecta!");
 			}//fin switch
 		}  while(opcionLibro != Menu.SALIR);//fin do
-	}
-}
+	}//fin run
+}//fin clase
