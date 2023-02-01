@@ -1,36 +1,43 @@
 package clases;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class GestorBBDD {
+public class GestorBBDD extends Conector {
 	
 	public void insertarLibro(Libro libro) throws SQLException, ClassNotFoundException {
-		Conector conex =new Conector();
-		conex.Conexion();
 		
-		PreparedStatement pstInsert=conex.getConexion().prepareStatement("INSERT INTO libros ( titulo, autor, num_pag ) VALUES(?,?,?)");
+		
+		PreparedStatement pstInsert=super.conexion.prepareStatement("INSERT INTO libros ( titulo, autor, num_pag ) VALUES(?,?,?)");
 		pstInsert.setString(1,libro.getTitulo() );
 		pstInsert.setString(2, libro.getAutor());
 		pstInsert.setInt(3,libro.getNum_pag() );
 		pstInsert.execute();
-		conex.cerrarConexion();
+		
 	}
 	
 	public void eliminarLibro(int id) throws SQLException, ClassNotFoundException {
-		Conector conex =new Conector();
-		conex.Conexion();
 		Libro libro =new Libro();
 		
-		PreparedStatement pstDelete=conex.getConexion().prepareStatement("DELETE FROM libros WHERE id =?");
+		PreparedStatement pstDelete=super.conexion.prepareStatement("DELETE FROM libros WHERE id =?");
 		pstDelete.setInt(1, libro.getId());
 		System.out.println("Eliminando libro...");
 		pstDelete.execute();
-		conex.cerrarConexion();
+		
 	}
 	
-	public Libro getLibro(int id) {
-		return null;
+	public Libro getLibro(int id) throws SQLException {
+		PreparedStatement pstSelect=super.conexion.prepareStatement("SELECT * FROM libros WHERE id =?");
+		pstSelect.setInt(1, id);
+		ResultSet rs=pstSelect.executeQuery();
+		rs.next();
+		Libro libro = new Libro();
+		libro.setId(rs.getInt("id"));
+		libro.setTitulo(rs.getString("titulo"));
+		libro.setAutor(rs.getNString("autor"));
+		libro.setNum_pag(rs.getInt("num_pag"));
+		return libro;
 		
 	}
 	
