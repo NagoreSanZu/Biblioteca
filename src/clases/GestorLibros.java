@@ -9,6 +9,7 @@ public class GestorLibros {
 		int opcionLibro;
 		GestorBBDD gestorBases= new GestorBBDD();
 		FormularioDeDatos formulario =new FormularioDeDatos();
+		Visor visor = new Visor();
 
 		do {
 			Menu.menuLibros();
@@ -41,7 +42,9 @@ public class GestorLibros {
 				
 			case Menu.VER_LIBROS:
 				gestorBases.Conexion();
-				
+				visor.mostrarLibros(gestorBases.VerLibrosArray());
+				gestorBases.cerrarConexion();
+
 				
 				break;
 			case Menu.SALIR:
