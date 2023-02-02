@@ -21,4 +21,24 @@ System.out.println(mensaje);
 }
 
 
+//A PARTIR DE AQUI ES PARA SOCIOS -------------------------------------------------------------------------
+
+
+public static void mostrarSocios(ArrayList<Socio> socios) {
+
+for (Socio so : socios) {
+	System.out.println(so);
+}
+}
+
+public static void mostrarSocio(Socio socio) {
+System.out.println(socio);
+}
+
+
+public static void mostradorMensajesSocio(String mensaje) {
+System.out.println(mensaje);	
+}
+
+
 }//fin de la clase
