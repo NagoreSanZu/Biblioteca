@@ -117,7 +117,22 @@ public void modificarSocio(Socio socio) throws SQLException {
 	pstInsert.execute();
 }
 
-
+public  Socio getSocio(int id) throws SQLException {
+	PreparedStatement pstSelect=super.conexion.prepareStatement("SELECT * FROM socios WHERE id =?");
+	pstSelect.setInt(1, id);
+	ResultSet rs=pstSelect.executeQuery();
+	rs.next();
+	Socio socio=new Socio();
+	socio.setId(rs.getInt("id"));
+	socio.setNombre(rs.getString("nombre"));
+	socio.setApellido(rs.getString("apellido"));
+	socio.setDireccion(rs.getString("direccion"));
+	socio.setPoblacion(rs.getString("poblacion"));
+	socio.setProvincia(rs.getString("provincia"));
+	socio.setDni(rs.getString("dni"));
+	return socio;
+	
+}
 
 public ArrayList VerSociosArray() throws SQLException {
 	String senteciaSelect = "SELECT * FROM socios";

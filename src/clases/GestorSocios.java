@@ -1,9 +1,10 @@
 package clases;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class GestorSocios {
-	public static void run(Scanner scan) {
+	public static void run(Scanner scan) throws SQLException, ClassNotFoundException {
 		int opcionSocio;
 		GestorBBDD gestorBases= new GestorBBDD();
 		FormularioDeDatos formulario =new FormularioDeDatos();
@@ -24,17 +25,17 @@ public class GestorSocios {
 			
 			case Menu.ELIMINAR_SOCIO:
 				gestorBases.Conexion();
-				int idElim=formulario.pedirIdLibros(scan);
-				gestorBases.eliminarLibro(idElim);
+				int idElim=formulario.pedirIdSocio(scan);
+				gestorBases.eliminarSocio(idElim);
 				gestorBases.cerrarConexion();
 				break;
 			
 			case Menu.MODIFICAR_SOCIO:
 				gestorBases.Conexion();
-				System.out.println("escribe el id del libro");
-				int idLibro= Integer.parseInt(scan.nextLine());
-				Libro libroMod = formulario.ModificarDatosLibro(gestorBases.getLibro(idLibro), scan);
-				gestorBases.modificarLibro(libroMod);
+				System.out.println("escribe el id del socio");
+				int idSocio= Integer.parseInt(scan.nextLine());
+				Socio socioMod = formulario.ModificarDatosSocio(gestorBases.getSocio(idSocio), scan);
+				gestorBases.modificarSocio(socioMod);
 				gestorBases.cerrarConexion();
 				break;
 				
@@ -52,4 +53,5 @@ public class GestorSocios {
 				System.out.println("Opcion incorrecta!");
 			}//fin switch
 		}  while(opcionSocio != Menu.SALIR);//fin do
+	}
 }//fin clase
