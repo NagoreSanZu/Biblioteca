@@ -52,6 +52,36 @@ public class FormularioDeDatos {
 	
 
 	
+//A PARTIR DE AQUI ES PARA SOCIOS -------------------------------------------------------------------------
+
+	
+	public static Socio pedirDatosSocio(Scanner scan) {
+		
+		System.out.println("PEDIR DATOS DEL SOCIO , PORFAVOR INTRODUZCA LOS SIGUIENTES DATOS:");
+		System.out.println("Cual es el nombre del socio");
+		String nombreSocio =scan.nextLine();
+		System.out.println("Cual es el apellido del socio?");
+		String apellidoSocio = scan.nextLine();
+		System.out.println("Cual es la direccion del socio ??");
+		String direccionSocio = scan.nextLine();
+		System.out.println("Cual es la poblacion del socio?");
+		String poblacionSocio = scan.nextLine();
+		System.out.println("Cual es la provincia del socio ?");
+		String provinciaSocio= scan.nextLine();
+		System.out.println("Cual es el dni del socio??");
+		String dniSocio = scan.nextLine();
+		
+		Socio socio= new Socio ();
+		socio.setNombre(nombreSocio);
+		socio.setApellido(apellidoSocio);
+		socio.setDireccion(direccionSocio);
+		socio.setPoblacion(poblacionSocio);
+		socio.setProvincia(provinciaSocio);
+		socio.setDni(dniSocio);
+		return socio;
+		
+	}
+	
 	
 	
 }
