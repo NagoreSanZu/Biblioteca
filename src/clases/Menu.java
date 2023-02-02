@@ -33,7 +33,11 @@ public class Menu {
 	}
 
 	public static void menuSocios() {
-		System.out.println("1-Ver socios");
+		System.out.println("1-Insertar socio");
+		System.out.println("2-Eliminar socio");
+		System.out.println("3-Modificar socio");
+		System.out.println("4-Ver socio");
+		System.out.println("0-Salir");
 	}
 
 	public static void menuLibros() { 
