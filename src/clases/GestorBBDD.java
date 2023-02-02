@@ -80,7 +80,7 @@ public class GestorBBDD extends Conector {
 public  void insertarSocio(Socio socio) throws SQLException {
 	
 		
-		PreparedStatement pstInsert=super.conexion.prepareStatement("INSERT INTO socios ( nombre, apellido, direccion, poblacion,provincia, dni) VALUES(?,?,?,?,?,?)");
+		PreparedStatement pstInsert=super.conexion.prepareStatement("INSERT INTO socios ( nombre=?, apellido=?, direccion=?, poblacion,provincia, dni) VALUES(?,?,?,?,?,?)");
 		pstInsert.setString(1,socio.getNombre() );
 		pstInsert.setString(2, socio.getApellido());
 		pstInsert.setString(3,socio.getDireccion() );
@@ -90,5 +90,23 @@ public  void insertarSocio(Socio socio) throws SQLException {
 		pstInsert.execute();
 		
 	}
+
+
+public void eliminarSocio(int id) throws SQLException {
+	
+	PreparedStatement pstDelete=super.conexion.prepareStatement("DELETE FROM libros WHERE id =?");
+	pstDelete.setInt(1, id);
+	System.out.println("Eliminando Socio...");
+	pstDelete.execute();
+	
+}
+
+
+
+
+
+
+
+
 
 }//fin clase
