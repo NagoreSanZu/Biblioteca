@@ -3,17 +3,25 @@ package clases;
 import java.util.Scanner;
 
 public class Menu {
+	
+	//MENY GENERA
 	static final int GESTIONAR_LIBROS = 1;
 	static final int GESTIONAR_SOCIOS = 2;
 	static final int GESTIONAR_PRESTAMOS = 3;
+	
+	//ESTA VARIABLE SIRVER PARA TODOS LOS MENOS Y SUBMENUS
 	static final int SALIR = 0;
 
+	//SOCIO
+	static final int INSERTAR_SOCIO=1;
+	static final int ELIMINAR_SOCIO=2;
+	static final int MODIFICAR_SOCIO=3;
+	static final int VER_SOCIO=4;
+	//LIBRO
 	static final int INSERTAR_LIBRO=1;
 	static final int ELIMINAR_LIBRO=2;
-	static final int VER_LIBROS=4;
 	static final int MODIFICAR_LIBRO=3;
-	
-	static final int VER_SOCIOS =1;
+	static final int VER_LIBROS=4;
 	
 	static final int REALIZAR_PRESTAMO =1;
 
