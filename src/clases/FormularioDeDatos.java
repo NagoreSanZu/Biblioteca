@@ -108,7 +108,13 @@ public static Socio ModificarDatosSocio(Socio socio, Scanner scan) {
 	return socio;
 	}
 	
-	
+public static int pedirIdSocio(Scanner scan) {
+	Socio socio = new Socio();
+	System.out.println("Indica el id del libro que quieras pedir");
+	int idLibro = Integer.parseInt(scan.nextLine());
+	socio.setId(idLibro);
+		return socio.getId();
+}	
 	
 	
 }
