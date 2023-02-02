@@ -72,7 +72,23 @@ public class GestorBBDD extends Conector {
 			libros.add(libro);
 		}
 		return libros;
-	
-	
 	}
+	
+	
+//A PARTIR DE AQUI ES PARA SOCIOS -------------------------------------------------------------------------
+
+public  void insertarSocio(Socio socio) throws SQLException {
+	
+		
+		PreparedStatement pstInsert=super.conexion.prepareStatement("INSERT INTO socios ( nombre, apellido, direccion, poblacion,provincia, dni) VALUES(?,?,?,?,?,?)");
+		pstInsert.setString(1,socio.getNombre() );
+		pstInsert.setString(2, socio.getApellido());
+		pstInsert.setString(3,socio.getDireccion() );
+		pstInsert.setString(4,socio.getPoblacion() );
+		pstInsert.setString(5,socio.getProvincia() );
+		pstInsert.setString(6,socio.getDni() );
+		pstInsert.execute();
+		
+	}
+
 }//fin clase
