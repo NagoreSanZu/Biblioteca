@@ -102,6 +102,21 @@ public void eliminarSocio(int id) throws SQLException {
 }
 
 
+public void modificarSocio(Socio socio) throws SQLException {
+	
+
+	PreparedStatement pstInsert=super.conexion.prepareStatement("UPDATE libros SET  nombre=?, apellido,=? direccion=?, poblacion=?,provincia=?, dni=? WHERE id=?");
+	pstInsert.setString(1,socio.getNombre() );
+	pstInsert.setString(2, socio.getApellido());
+	pstInsert.setString(3,socio.getDireccion() );
+	pstInsert.setString(4,socio.getPoblacion() );
+	pstInsert.setString(5,socio.getProvincia() );
+	pstInsert.setString(6,socio.getDni() );
+	pstInsert.setInt(7,socio.getId());
+
+	pstInsert.execute();
+}
+
 
 
 
