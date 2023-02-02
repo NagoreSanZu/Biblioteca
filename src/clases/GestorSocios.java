@@ -48,7 +48,7 @@ public class GestorSocios {
 				break;
 			case Menu.SALIR:
 				System.out.println("agur");
-			
+				break;
 			default:
 				System.out.println("Opcion incorrecta!");
 			}//fin switch
