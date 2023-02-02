@@ -1,9 +1,11 @@
 package clases;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class GestorBiblioteca {
-	public void run(Scanner scan) {
+	Scanner scan = new Scanner(System.in);
+	public void run() throws NumberFormatException, ClassNotFoundException, SQLException {
 		int opcionLibro;
 
 		do {

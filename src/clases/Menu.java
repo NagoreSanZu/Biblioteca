@@ -10,17 +10,22 @@ public class Menu {
 
 	static final int INSERTAR_LIBRO=1;
 	static final int ELIMINAR_LIBRO=2;
+	static final int VER_LIBROS=4;
 	static final int MODIFICAR_LIBRO=3;
 	
 	static final int VER_SOCIOS =1;
+	
+	static final int REALIZAR_PRESTAMO =1;
 
 
 
 	public static void menuPrincipal() {
-	
-		System.out.println("Gestionar Libros");
-		System.out.println("Gestionar Socios");
-		System.out.println("Gestionar Prestamos");
+		System.out.println("-------MENU-------");
+		System.out.println("1-Gestionar Libros");
+		System.out.println("2-Gestionar Socios");
+		System.out.println("3-Gestionar Prestamos");
+		System.out.println("0-Salir");
+
 	}
 
 	public static void menuPrestamo() {
@@ -33,8 +38,10 @@ public class Menu {
 
 	public static void menuLibros() { 
 		System.out.println("1-Insertar libro");
-		System.out.println("2- Eliminar libro");
-		System.out.println("3- Ver libros");
+		System.out.println("2-Eliminar libro");
+		System.out.println("3-Modificar libros");
+		System.out.println("4-Ver libros");
+		System.out.println("0-Salir");
 	}
 	
 }

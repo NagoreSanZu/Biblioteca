@@ -32,9 +32,17 @@ public class GestorLibros {
 			
 			case Menu.MODIFICAR_LIBRO:
 				gestorBases.Conexion();
-				//Libro libroMod = formulario.ModificarDatosLibro(libro, scan);
-				
+				System.out.println("escribe el id del libro");
+				int idLibro= Integer.parseInt(scan.nextLine());
+				Libro libroMod = formulario.ModificarDatosLibro(gestorBases.getLibro(idLibro), scan);
+				gestorBases.modificarLibro(libroMod);
 				gestorBases.cerrarConexion();
+				break;
+				
+			case Menu.VER_LIBROS:
+				gestorBases.Conexion();
+				
+				
 				break;
 			case Menu.SALIR:
 				System.out.println("agur");
