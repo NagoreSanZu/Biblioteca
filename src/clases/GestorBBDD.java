@@ -3,6 +3,8 @@ package clases;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 
 public class GestorBBDD extends Conector {
 	
@@ -18,10 +20,9 @@ public class GestorBBDD extends Conector {
 	}
 	
 	public void eliminarLibro(int id) throws SQLException {
-		Libro libro =new Libro();
 		
 		PreparedStatement pstDelete=super.conexion.prepareStatement("DELETE FROM libros WHERE id =?");
-		pstDelete.setInt(1, libro.getId());
+		pstDelete.setInt(1, id);
 		System.out.println("Eliminando libro...");
 		pstDelete.execute();
 		
@@ -53,6 +54,25 @@ public class GestorBBDD extends Conector {
 		
 	}
 	
-	
+	public ArrayList VerLibrosArray() throws SQLException {
+		String senteciaSelect = "SELECT * FROM libros";
+		Statement st = super.conexion.createStatement();
+		ArrayList<Libro> libros= new ArrayList <Libro>();
 
-}
+		ResultSet resultado =st.executeQuery(senteciaSelect);
+		while(resultado.next()) {
+			
+			Libro libro=new Libro();
+			
+			libro.setId(resultado.getInt("id"));
+			libro.setTitulo(resultado.getString("titulo"));
+			libro.setAutor(resultado.getNString("autor"));
+			libro.setNum_pag(resultado.getInt("num_pag"));
+			
+			libros.add(libro);
+		}
+		return libros;
+	
+	
+	}
+}//fin clase
