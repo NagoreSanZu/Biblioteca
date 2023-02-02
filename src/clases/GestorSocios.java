@@ -15,21 +15,21 @@ public class GestorSocios {
 			
 			switch(opcionSocio){
 			
-			case Menu.INSERTAR_LIBRO:
+			case Menu.INSERTAR_SOCIO:
 				gestorBases.Conexion();
 				Socio SocioInsert=formulario.pedirDatosSocio(scan);
 				gestorBases.insertarSocio(SocioInsert);
 				gestorBases.cerrarConexion();
 				break;
 			
-			case Menu.ELIMINAR_LIBRO:
+			case Menu.ELIMINAR_SOCIO:
 				gestorBases.Conexion();
 				int idElim=formulario.pedirIdLibros(scan);
 				gestorBases.eliminarLibro(idElim);
 				gestorBases.cerrarConexion();
 				break;
 			
-			case Menu.MODIFICAR_LIBRO:
+			case Menu.MODIFICAR_SOCIO:
 				gestorBases.Conexion();
 				System.out.println("escribe el id del libro");
 				int idLibro= Integer.parseInt(scan.nextLine());
@@ -38,7 +38,7 @@ public class GestorSocios {
 				gestorBases.cerrarConexion();
 				break;
 				
-			case Menu.VER_LIBROS:
+			case Menu.VER_SOCIO:
 				gestorBases.Conexion();
 				visor.mostrarLibros(gestorBases.VerLibrosArray());
 				gestorBases.cerrarConexion();
