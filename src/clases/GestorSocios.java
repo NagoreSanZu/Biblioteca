@@ -41,7 +41,7 @@ public class GestorSocios {
 				
 			case Menu.VER_SOCIO:
 				gestorBases.Conexion();
-				visor.mostrarLibros(gestorBases.VerLibrosArray());
+				visor.mostrarSocios(gestorBases.VerSociosArray());
 				gestorBases.cerrarConexion();
 
 				
