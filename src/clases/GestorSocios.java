@@ -11,7 +11,7 @@ public class GestorSocios {
 		Visor visor = new Visor();
 
 		do {
-			Menu.menuLibros();
+			Menu.menuSocios();
 			opcionSocio=Integer.parseInt(scan.nextLine());
 			
 			switch(opcionSocio){
@@ -32,7 +32,7 @@ public class GestorSocios {
 			
 			case Menu.MODIFICAR_SOCIO:
 				gestorBases.Conexion();
-				System.out.println("escribe el id del socio");
+				System.out.println("escribe el id del socio que quieras modificar");
 				int idSocio= Integer.parseInt(scan.nextLine());
 				Socio socioMod = formulario.ModificarDatosSocio(gestorBases.getSocio(idSocio), scan);
 				gestorBases.modificarSocio(socioMod);
