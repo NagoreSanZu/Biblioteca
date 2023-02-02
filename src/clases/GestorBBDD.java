@@ -94,7 +94,7 @@ public  void insertarSocio(Socio socio) throws SQLException {
 
 public void eliminarSocio(int id) throws SQLException {
 	
-	PreparedStatement pstDelete=super.conexion.prepareStatement("DELETE FROM libros WHERE id =?");
+	PreparedStatement pstDelete=super.conexion.prepareStatement("DELETE FROM socios WHERE id =?");
 	pstDelete.setInt(1, id);
 	System.out.println("Eliminando Socio...");
 	pstDelete.execute();
@@ -105,7 +105,7 @@ public void eliminarSocio(int id) throws SQLException {
 public void modificarSocio(Socio socio) throws SQLException {
 	
 
-	PreparedStatement pstInsert=super.conexion.prepareStatement("UPDATE libros SET  nombre=?, apellido,=? direccion=?, poblacion=?,provincia=?, dni=? WHERE id=?");
+	PreparedStatement pstInsert=super.conexion.prepareStatement("UPDATE socios SET  nombre=?, apellido,=? direccion=?, poblacion=?,provincia=?, dni=? WHERE id=?");
 	pstInsert.setString(1,socio.getNombre() );
 	pstInsert.setString(2, socio.getApellido());
 	pstInsert.setString(3,socio.getDireccion() );
