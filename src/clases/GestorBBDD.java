@@ -119,6 +119,28 @@ public void modificarSocio(Socio socio) throws SQLException {
 
 
 
+public ArrayList VerSociosArray() throws SQLException {
+	String senteciaSelect = "SELECT * FROM socios";
+	Statement st = super.conexion.createStatement();
+	ArrayList<Socio> socios= new ArrayList <Socio>();
+
+	ResultSet resultado =st.executeQuery(senteciaSelect);
+	while(resultado.next()) {
+		
+		Socio socio=new Socio();
+		
+		socio.setId(resultado.getInt("id"));
+		socio.setNombre(resultado.getString("nombre"));
+		socio.setApellido(resultado.getString("apellido"));
+		socio.setDireccion(resultado.getString("direccion"));
+		socio.setPoblacion(resultado.getString("poblacion"));
+		socio.setProvincia(resultado.getString("provincia"));
+		socio.setDni(resultado.getString("dni"));
+
+		socios.add(socio);
+	}
+	return socios;
+}
 
 
 
