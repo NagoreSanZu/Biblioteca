@@ -23,7 +23,7 @@ public class GestorBiblioteca {
 				break;
 			
 			case Menu.GESTIONAR_PRESTAMOS:
-				System.out.println("ins socio");
+				System.out.println("ins prestamo");
 				break;
 			case Menu.SALIR:
 				System.out.println("agur");
