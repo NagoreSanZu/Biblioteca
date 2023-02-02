@@ -1,6 +1,9 @@
 package clases;
 
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.Scanner;
+
 
 public class FormularioDeDatos {
 
@@ -47,6 +50,9 @@ public class FormularioDeDatos {
 			return libro.getId();
 	}
 	
+
+	
 	
 	
 }
+
