@@ -1,7 +1,10 @@
 package clases;
 
 import java.sql.ResultSet;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 
 
@@ -117,5 +120,31 @@ public static int pedirIdSocio(Scanner scan) {
 }	
 	
 	
+//A PARTIR DE AQUI ES PARA PRESTAMOS -------------------------------------------------------------------------
+
+public static Prestamo pedirDatosPrestamo(Scanner scan) throws ParseException {
+	SimpleDateFormat formatoLectura1 = new SimpleDateFormat("dd-MM-yyyy");
+	System.out.println("Cual es el id del libro?");
+	int idLibroPres= Integer.parseInt(scan.nextLine());
+	System.out.println("Cual es el id del socio?");
+	int idSocioPres= Integer.parseInt(scan.nextLine());
+	System.out.println("Escribe una fecha en formato dd-MM-yyyy (ejmplo: 23-01-2020)");
+	String fechaFact= scan.nextLine();
+	Date fechaLeida = formatoLectura1.parse(fechaFact);
+	System.out.println("Ha sido devuelto ? true /false");
+	boolean devueltoPres =Boolean.parseBoolean(scan.nextLine());
+	
+	
+	Prestamo prestamo = new Prestamo();
+	
+	prestamo.setId_libro(idLibroPres);
+	prestamo.setId_socio(idSocioPres);
+	prestamo.setFecha(fechaLeida);
+	prestamo.setDevuelto(devueltoPres);
+	
+	return prestamo;
+	
 }
+
+}//fin clase
 
