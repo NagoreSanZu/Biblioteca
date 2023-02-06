@@ -1,5 +1,6 @@
 package clases;
 
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -157,7 +158,22 @@ public ArrayList VerSociosArray() throws SQLException {
 	return socios;
 }
 
+/* para prestamos------------------------------------------------------------------------------------------------
+ * 
+ */
 
+public  void insertarPrestamo(Prestamo prestamo) throws SQLException {
+	
+	
+	PreparedStatement pstInsert=super.conexion.prepareStatement("INSERT INTO prestamosVALUES(?,?,?,?)");
+	pstInsert.setInt(1,prestamo.getId_libro() );
+	pstInsert.setInt(1,prestamo.getId_socio() );
+	pstInsert.setDate(3,new Date (prestamo.getFecha().getTime()));
+	pstInsert.setBoolean(4,prestamo.isDevuelto() );
+	
+	pstInsert.execute();
+	
+}
 
 
 
