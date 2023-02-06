@@ -144,7 +144,33 @@ public static Prestamo pedirDatosPrestamo(Scanner scan) throws ParseException {
 	
 	return prestamo;
 	
+}//fin clase
+
+public static Prestamo  retirarPrestamo(Scanner scan) {
+	SimpleDateFormat formatoLectura1 = new SimpleDateFormat("dd-MM-yyyy");
+	Prestamo prestamo = new Prestamo ();
+	System.out.println("Indica el id del libro que quieras devolver");
+	int idLibro = Integer.parseInt(scan.nextLine());
+	System.out.println("Indica el id del socio que lo ha pedido");
+	int idsocio = Integer.parseInt(scan.nextLine());
+	System.out.println("escribe la fecha en la que pillaste el libro dd-MM-yyyy (ejmplo: 23-01-2020)");
+	String fechaFact= scan.nextLine();
+	Date fechaLeida=null;
+	try {
+		fechaLeida = formatoLectura1.parse(fechaFact);
+	} catch (ParseException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	
+	prestamo.setId_libro(idLibro);
+	prestamo.setId_socio(idsocio);
+	prestamo.setFecha(fechaLeida);
+	prestamo.setDevuelto(true);
+		return prestamo;
 }
+
+
 
 }//fin clase
 

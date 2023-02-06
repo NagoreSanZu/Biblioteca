@@ -1,11 +1,12 @@
 package clases;
 
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.Scanner;
 
 public class GestorBiblioteca {
 	Scanner scan = new Scanner(System.in);
-	public void run() throws NumberFormatException, ClassNotFoundException, SQLException {
+	public void run() throws NumberFormatException, ClassNotFoundException, SQLException, ParseException {
 		int opcionLibro;
 
 		do {
@@ -23,7 +24,8 @@ public class GestorBiblioteca {
 				break;
 			
 			case Menu.GESTIONAR_PRESTAMOS:
-				System.out.println("ins prestamo");
+				GestorPrestamo gestorPrestamo= new GestorPrestamo();
+				gestorPrestamo.run(scan);
 				break;
 			case Menu.SALIR:
 				System.out.println("agur");

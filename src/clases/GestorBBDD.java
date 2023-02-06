@@ -165,14 +165,30 @@ public ArrayList VerSociosArray() throws SQLException {
 public  void insertarPrestamo(Prestamo prestamo) throws SQLException {
 	
 	
-	PreparedStatement pstInsert=super.conexion.prepareStatement("INSERT INTO prestamosVALUES(?,?,?,?)");
+	PreparedStatement pstInsert=super.conexion.prepareStatement("INSERT INTO prestamos VALUES(?,?,?,?)");
 	pstInsert.setInt(1,prestamo.getId_libro() );
-	pstInsert.setInt(1,prestamo.getId_socio() );
-	pstInsert.setDate(3,new Date (prestamo.getFecha().getTime()));
+	pstInsert.setInt(2,prestamo.getId_socio() );
+	pstInsert.setDate(3,new Date(prestamo.getFecha().getTime()));
 	pstInsert.setBoolean(4,prestamo.isDevuelto() );
 	
 	pstInsert.execute();
 	
+}
+
+public void modificarPrestamo(Prestamo prestamo) throws SQLException {
+	
+
+	PreparedStatement pstInsert=super.conexion.prepareStatement("UPDATE prestamos SET id_libro = ?, id_socio = ?, fecha = ?, devuelto = ? WHERE  id_libro = ? and id_socio =? and fecha=?;");
+	pstInsert.setInt(1,prestamo.getId_libro() );
+	pstInsert.setInt(2,prestamo.getId_socio() );
+	pstInsert.setDate(3,new Date(prestamo.getFecha().getTime()));
+	pstInsert.setBoolean(4,prestamo.isDevuelto() );
+	pstInsert.setInt(5,prestamo.getId_libro() );
+	pstInsert.setInt(6,prestamo.getId_socio() );
+	pstInsert.setDate(7,new Date(prestamo.getFecha().getTime()));
+	
+	
+	pstInsert.execute();
 }
 
 
