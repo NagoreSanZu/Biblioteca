@@ -24,7 +24,9 @@ public class Menu {
 	static final int VER_LIBROS=4;
 	
 	static final int REALIZAR_PRESTAMO =1;
-
+	
+	static final int INSERTAR_PRESTAMO=1;
+	static final int ELIMINAR_PRESTAMO=2;
 
 
 	public static void menuPrincipal() {
@@ -38,6 +40,8 @@ public class Menu {
 
 	public static void menuPrestamo() {
 		System.out.println("1-Realizar un prestamo");
+		System.out.println("1-Eliminar prestamo");
+
 	}
 
 	public static void menuSocios() {
