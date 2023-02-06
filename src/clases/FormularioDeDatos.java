@@ -131,8 +131,8 @@ public static Prestamo pedirDatosPrestamo(Scanner scan) throws ParseException {
 	System.out.println("Escribe una fecha en formato dd-MM-yyyy (ejmplo: 23-01-2020)");
 	String fechaFact= scan.nextLine();
 	Date fechaLeida = formatoLectura1.parse(fechaFact);
-	System.out.println("Ha sido devuelto ? true /false");
-	boolean devueltoPres =Boolean.parseBoolean(scan.nextLine());
+	
+	boolean devueltoPres =false;
 	
 	
 	Prestamo prestamo = new Prestamo();
